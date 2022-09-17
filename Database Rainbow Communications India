@@ -1,0 +1,228 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jun 30, 2015 at 05:43 PM
+-- Server version: 5.5.43-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `rainbow_isp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `franchisee`
+--
+
+CREATE TABLE IF NOT EXISTS `franchisee` (
+  `s_no` int(100) NOT NULL AUTO_INCREMENT,
+  `location` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `person` varchar(100) NOT NULL,
+  `mobile` varchar(100) NOT NULL,
+  `address` varchar(500) NOT NULL,
+  `bandwidth` varchar(100) NOT NULL,
+  `provider` varchar(100) NOT NULL,
+  `mrtg_link` varchar(100) NOT NULL,
+  `acc_details` longtext NOT NULL,
+  PRIMARY KEY (`s_no`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
+
+--
+-- Dumping data for table `franchisee`
+--
+
+INSERT INTO `franchisee` (`s_no`, `location`, `name`, `person`, `mobile`, `address`, `bandwidth`, `provider`, `mrtg_link`, `acc_details`) VALUES
+(2, 'Karur', 'Bluetooth Communicate', 'S.Dhanabalan', '9942888100', 'No 64. AAR Tower 5th floor west pradhakshanam road karur 639001', '30MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-033/rbwc-ilp-033.html', '2_details.html'),
+(3, 'Salem', 'Airways Communications', 'Hussain', '8344445353', '68/1 Rajaji Street Suramagalam\r\nSalem', '30MB', 'Vodafone', 'http://182.19.54.150:85/graphs/iface/WAN/', '3_details.html'),
+(4, 'Salem', 'Inet Communications', 'Prabhu', '9994521230', '37-A, Mariamman Koil St,\r\nManakaddu, Salem - 636007', '15MB', 'Vodafone', 'http://103.25.47.70:84/graphs/iface/Vodafone%20WAN/', '4_details.html'),
+(5, 'Salem', 'RK Communications', 'K.Mahesh Kumar', '9942977487', 'Ist Floor, Jeyam Arun Plaza, Advaitha Ashram Road, Fairland''s, Salem - 636016', '45MB', 'VodaFone', 'http://182.19.61.157/graphs/iface/ether2-RK/', '5_details.html'),
+(20, 'Krishnagiri', 'Airways Communications', 'Hussain', '8344445353', 'KPK Complex 2a 4th Cross Co-Operative Colony\r\nKrishnagiri', '38MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-005/rbwc-ilp-005.html', '20_details.html'),
+(7, 'Theni', 'Airways Communications', 'Noor Mohamed', '9025848341', '12A M.S.Natrajan Complex Odai Street,\r\nTheni.', '10MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-018/rbwc-ilp-018.html', '7_details.html'),
+(9, 'Vaniyampadi', 'Airway communication', 'G.Anbarasu', '9047676565', 'No:9, P.J Nehru Road, Azeem Complex,\r\nVaniyambadi - 635751', '30MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-028/rbwc-ilp-028.html', '9_details.html'),
+(10, 'Tirunelveli', 'Imax Communications', 'VijayaVeeran', '8883111044', 'No:13, Puthumanai kothba Pallivasal St,\r\nMelapalayam, Tirunelveli - 627 005', '35MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-009/rbwc-ilp-009.html', '10_details.html'),
+(11, 'Perambalur', 'ZeroneTech', 'Tamilmaran', '8925245110', 'No: 148D, Opp. t o SBI,\r\nVenkateshapuram, Trichy main road, Perambalur - 621212', '35MB', 'Vodafone', 'http://122.15.149.177/graphs/iface/ether5/', '11_details.html'),
+(12, 'Chengalpet', 'Blenda Communications', 'Senthil.G', '7200310001', '241/1A, Kandavel Nagar, Lake Avenue,\r\nMalaiyur, Chengalpet - 603002', '10 MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-007/rbwc-ilp-007.html', '12_details.html'),
+(13, 'Perundurai', 'Blenda Communications', 'Senthil.G', '7200310001', '36-A, Pts Complex, Opp New Bus Stand, Perundurai - 638052', '34MB', 'Vodafone', 'http://182.19.60.177/graphs/iface/ether%201%20-%20Rainbow-Wan/', '13_details.html'),
+(56, 'Rajapalayam', 'Kapu Network Systems Private Limited', 'Karuppusamy', '8925501766', 'Rajapalayam', '10MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-0018/rbwc-ilp-0018.html', '56_details.'),
+(15, 'Chinnamanur', 'Team Net', 'M.P.S Ponnusamy', '7845162202', 'No:3/ 8w, North Car St, Chinnamaur,  Theni - Dt - 625 515', '10 MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-003/rbwc-ilp-003.html', '15_details.html'),
+(16, 'Karur', 'Inet Communications', 'A.Abdul rahuman', '9994937779', '277 vaiyapuri nagar1st cross,sengundhapuram(po),karur\r\n', '10MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-002/rbwc-ilp-002.html', '16_details.html'),
+(17, 'Uthukottai', 'Gajalakshmi Communications', 'Vinodh.S', '9600044841', '33/4, Thiruvallur Raod, Uthukottai,\r\nThiruvallur Dist - 602026', '15MB', 'Vodafone', 'http://182.74.97.98:5886/graphs/iface/ether1/', '17_details.html'),
+(18, 'Trichy', 'Airway communication Services', 'S.Satheesh Kumar', '9344492902', 'No.13, Arasu Tower, Rearside of Kalaingar Arivalayam, Karur Bye-pass road, Trichy - 620 002', '20MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-036/rbwc-ilp-036.html', '18_details.html'),
+(19, 'Mettur', 'Awanthi Wireless', 'Anguraj', '9345140004', '10/125, Rajaji Nagar, Madhiyankuttai (Po), Mettur Dam, Salem Dist - 636 452.', '10MB', 'Vodafone', 'http://123.63.246.225/graphs/iface/ether2/', '19_details.html'),
+(26, 'Coimbatore', 'TVS Broadband', 'RamaKrishnan', '9940055583', '7/74, Kasthuribai 3rd Street,Ganapathy,\r\nCoimbatore-641006', '10MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-044/rbwc-ilp-044.html', '26_details.html'),
+(25, 'East Tambaram-Chennai', 'Tridax Wireless Solution', 'Saravanan', '7299926625', 'No.142,Velacherry Road, East Tambaram,\r\nChennai-600059', '45MB', 'Vodafone', 'http://182.19.60.177/graphs/iface/ether%201%20-%20Rainbow-Wan/', '25_details.html'),
+(27, 'Tenkasi', 'LNT Network', 'Ravikumar', '9976767170', 'No.220F,Kannimaramman Kovil Street,\r\nTenkasi,Tirunelveli Dist-627811', '20MB', 'Vodafone', 'http://122.15.159.1/graphs/iface/eh1-WAN/', '27_details.'),
+(23, 'Pallikaranai -Chennai', 'Data Pond Communications Pvt Ltd', 'Ananadhan', '9384623113', 'A6, Chettinad Enclave, 5th Avenue, Narayanapuram, Pallikaranai, - Chennai\r\n', '10 MB', 'Vodafone', 'Link', '23_details.html'),
+(29, 'Mettupalayam', 'Sree Sakthi Communication', 'Vimaladevi', '9942971717', '11-1, K.R.Nivas, Annaji Roa Road, Mettupalayam - 641301', '10MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-043/rbwc-ilp-043.html', '29_details.html'),
+(24, 'Aranthangi', 'Star Communication Network', 'Venkatesh', '9095422251', '56/1,Big Bazaar Street, \r\nPudhukottai Dist', '10MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-037/rbwc-ilp-037.html', '24_details.html'),
+(28, 'Viruthunagar', 'Sense Wifi Broadband', 'Chandrasekaran', '9442569124', 'No.39A,North East Street,\r\nViruthunagar', '10MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-045/rbwc-ilp-045.html', '28_details.html'),
+(30, 'Sathur', 'Kapu Network', 'Karuppuswamy', '8925501766', 'No:165, Ooranipatty Street,Sriviliputhur-626125', '10MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-035/rbwc-ilp-035.html', '30_details.html'),
+(50, 'Ariyalur', 'SRM Infotech', 'Ramesh.R', '8870534391', 'No:147,M/2 SRM Illam,\r\nAvvai Nagar,,\r\nThirumangalam,', '20 MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-041/rbwc-ilp-041.html', '50_details.'),
+(34, 'Hosur', 'CBCC Broadband Services', 'Senthil', '8870751895', 'No:274/3, MM Nagar, Mookandapalli,\r\nHosur-635126', '25MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-040/rbwc-ilp-040.html', '34_details.html'),
+(55, 'Rasipuram', 'Rasi Communications', 'Prabhu', '9865009507', 'Rasipuram', '20MB', 'Airtel', 'http://182.74.99.33/graphs/iface/ether3-Rasi%20Communications/', '55_details.'),
+(49, 'Paramakudi', 'King Communications', 'Vinoth', '9750967111', '2-482-83 vasanthapuram,Paramakudi-623707', '15 Mb', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-025/rbwc-ilp-025.html', '49_details.'),
+(59, 'Ramanathapuram', 'Airnet Broadband', 'S.Raja', '9047573919', '2G,Head Post Office Street,Aranmanai, Ramanathapuram -623501 ', '10 MB', 'Airtel', 'Link', '59_details.'),
+(48, 'Sankarankoil', 'IMax Communications', 'VijayVeeran', '8883111044', '13,Puthumanai Kothupa pallivasal street,\r\nMelapalayam,Sankarankoil', '10 MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-046/rbwc-ilp-046.html', '48_details.'),
+(57, 'Rajapalayam', 'Saras Syscomms', 'Subhuramakrishnan', '9566524340', 'Rajapalayam', '15MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-0019/rbwc-ilp-0019.html', '57_details.'),
+(58, 'Srivalliputhur', 'Kapu Network Systems Private Limited', '8925501766', 'Karuppusamy', 'Srivalliputhur', '10Mb', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-0020/rbwc-ilp-0020.html', '58_details.'),
+(54, 'Salem', 'Do Communications', 'Karthik', '7667664122', 'Do Communications', '8Mb', 'Vodafone', 'http://182.19.61.157/graphs/iface/ether5-DO%20Communication/', '54_details.'),
+(53, 'Jayamkondam', 'Sky communication', 'Saravanan', '9843344226', '34A1, 1st floor opposite to post office, kumpakonam road, \r\nJayamkondam ', '10MB', 'vodafone', 'link', '53_details.'),
+(60, 'Ramand-Keezhakarai', 'AirSign Broadband', 'Munisamy', '9092669965', '#2/95,KTR Complex,New Bus Stand Opp,\r\nKeezhakarai - 623517.', '10MB', 'Airtel', 'Link', '60_details.'),
+(62, 'Ooty', 'VNET Technologies', 'Jerald Vimal', '9965572324', 'No:5 Siva Complex,New Commercial Road,Ooty,The Nilgiris -643001.', '12 MB', 'Airtel', ': http://usage3.mantraonline.com/ilp/rbwc-ilp-0011/rbwc-ilp-0011.html', '62_details.'),
+(63, 'Ooty', 'Phoenix Hi-Tech Networks Communications Pvt Ltd', 'Vijay Raja', '9965582324', 'No:103/50,Nanjogh Building,Behind Ooty Coffee House,Udhagamandalam,Nilgiris,Ooty - 641 201.', '16MB', 'Airtel', ': http://usage3.mantraonline.com/ilp/rbwc-ilp-0015/rbwc-ilp-0015.html', '63_details.'),
+(64, 'Udumelpet', 'Airwave', 'Chinnadurai', '9876543211', '5A,2nd Street,Iswariya Road,Viruthachalam - 606 001.', '10 MB', 'Airtel', 'Link', '64_details.'),
+(65, 'Virthachalam', 'Everest Broadband', 'Ajeeba Banu', '9876543211', 'No:818,AKR Complex,Junction Road,Viruthachalam - 606 001', '10 MB', 'Airtel', 'usage3.mantraonline.com/ilp/rbwc-ilp-0006/rbwc-ilp-0006.html', '65_details.'),
+(66, 'Chengee-Villupuram', 'JP Net ', 'Premnath', '9876543211', '43,Sundar Complex,Tindivanam Road,Chengee, Villupuram-604202.', '10 MB', 'Airtel', 'Link', '66_details.'),
+(67, 'Mannarkudi', 'Maran Communications', 'SriMaran', '9876543211', 'No:44,Vino Baji Street,Mannarkudi - 614 001.', '14 MB', 'Airtel', 'usage3.mantraonline.com/ilp/rbwc-ilp-0002/rbwc-ilp-0002.html', '67_details.'),
+(68, 'Tanjore', 'MJ Internet Services', 'Mohamed Mukthar', '9003431682', 'No:4/10,Gabriel Puram,Pasupathi Koil , Post Office Building,Tanjore -641 206.', '10 MB', 'Airtel', ' http://usage3.mantraonline.com/ilp/rbwc-ilp-0012/rbwc-ilp-0012.html  ', '68_details.'),
+(69, 'Pollachi', 'Mukhil Telecom', 'Muthukumar', '7373794401', 'Water Tank,Mahalingapuram(Roundtana), Pollachi-642 002.', '10 MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-0004/rbwc-ilp-0004.html', '69_details.'),
+(70, 'Gobichettipalayam', 'Peoples Network', 'Prathap', '7373733713', 'No:28,Raja Street,Opp Kannan Department,Gobichettipalayam-638 476.', '12 MB', 'Airtel', 'Link', '70_details.'),
+(72, 'Thudiyalur', 'Veda Networks', 'Naveen Prabhu', '956633322', 'No:4/400,VKL Street,Nggo Colony,Ahokapuram,Coimbatore(Thudiyalur)-641 022.', '30 MB', 'Airtel', 'Link', '72_details.'),
+(73, 'Thiruvarur', 'Y5 Net Solutions', 'Veeramani', '9876543211', 'No:20,Sivam Nagar,Panagal Road,Thiruvarur - 610 001.', '10MB', 'Airtel', 'Link', '73_details.'),
+(74, 'Thiruthuraipoondi', 'Y5 Net Solutions', 'Veeramani', '9876543211', 'No:A/3,Nagai Road(Abirami Tv Centre Upstairs),Thiruthuraipoondi- 614 713.', '10 MB', 'Airtel', ' http://usage3.mantraonline.com/ilp/rbwc-ilp-0013/rbwc-ilp-0013.html', '74_details.'),
+(75, 'Kumbakonam', 'Y5 Net Solutions', 'Veeramani', '9876543211', 'No:1,Mothilal Street,Leena Complex,2nd Floor,Kumbakonam-612 001.', '10 MB', 'Airtel', 'Link', '75_details.'),
+(76, 'KaraiKal-Thirunallar', 'Andavar Wifi Network', 'Bava Bahurudeen', '9943805981', 'No:777,Bharathyar Road, Keeshakasakudy,Karaikal -609 609.', '10MB', 'Airtel', 'Link', '76_details.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `franch_list`
+--
+
+CREATE TABLE IF NOT EXISTS `franch_list` (
+  `s_no` int(100) NOT NULL AUTO_INCREMENT,
+  `franchisee` varchar(100) NOT NULL,
+  PRIMARY KEY (`s_no`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=60 ;
+
+--
+-- Dumping data for table `franch_list`
+--
+
+INSERT INTO `franch_list` (`s_no`, `franchisee`) VALUES
+(1, 'Salem'),
+(3, 'Krishnagiri'),
+(4, 'Theni'),
+(23, 'Pallikaranai -Chennai'),
+(6, 'Vaniyampadi'),
+(7, 'Tirunelveli'),
+(8, 'Uthukottai'),
+(40, 'Rasipuram'),
+(10, 'Chinnamanur'),
+(11, 'Karur'),
+(12, 'Perambalur'),
+(29, 'Mettupalayam'),
+(14, 'Chengalpet'),
+(15, 'Perundurai'),
+(16, 'Mettur'),
+(24, 'Aranthangi'),
+(20, 'Trichy'),
+(25, 'East Tambaram-Chennai'),
+(26, 'Tenkasi'),
+(27, 'Viruthunagar'),
+(28, 'Coimbatore'),
+(30, 'Sathur'),
+(41, 'Rajapalayam'),
+(39, 'Jayamkondam'),
+(33, 'Hosur'),
+(34, 'Paramakudi'),
+(35, 'Ariyalur'),
+(36, 'Madambakkam - Chennai'),
+(38, 'Sankarankoil'),
+(42, 'Srivalliputhur'),
+(43, 'Ramanathapuram'),
+(44, 'Ramand-Keezhakarai'),
+(45, 'Dindigul'),
+(46, 'Ooty'),
+(47, 'Udumelpet'),
+(48, 'Virthachalam'),
+(49, 'Chengee-Villupuram'),
+(50, 'Mannarkudi'),
+(51, 'Tanjore'),
+(52, 'Pollachi'),
+(53, 'Gobichettipalayam'),
+(54, 'Thamampatti'),
+(55, 'Thudiyalur'),
+(56, 'Thiruvarur'),
+(57, 'Thiruthuraipoondi'),
+(58, 'Kumbakonam'),
+(59, 'KaraiKal-Thirunallar');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `locations`
+--
+
+CREATE TABLE IF NOT EXISTS `locations` (
+  `s_no` int(100) NOT NULL AUTO_INCREMENT,
+  `location` varchar(100) NOT NULL,
+  `address` varchar(500) NOT NULL,
+  `bandwidth` varchar(100) NOT NULL,
+  `provider` varchar(100) NOT NULL,
+  `mrtg_link` varchar(1000) NOT NULL,
+  `acc_details` longtext NOT NULL,
+  PRIMARY KEY (`s_no`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+
+--
+-- Dumping data for table `locations`
+--
+
+INSERT INTO `locations` (`s_no`, `location`, `address`, `bandwidth`, `provider`, `mrtg_link`, `acc_details`) VALUES
+(1, 'Komarapalayam', '18H Sathiyapuri,\r\nB.Komarapalayam', '90MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-017/rbwc-ilp-017.html', '1_details.html'),
+(2, 'Tiruchengode', '6/4 Kongu Complex,2nd Floor,\r\nOpposite  to New Bus stand\r\nTiruchengode-637211\r\n', '150MB', 'Vodafone', 'http://182.19.61.145/graphs/iface/ether11-Vodo-Input/', '2_details.html'),
+(3, 'Jalakandapuram', 'SR complex, 1st Floor, Tharamangalam Road, Jalakandapuram-636501.', '21MB', 'Vodafone', 'http://182.19.60.181/graphs/iface/INPUT/', '3_details.html'),
+(4, 'Salem', 'No.82, Opp.to Pillaiyar koil St,\r\nNear Siva Towers,\r\nMeyyanur Road,\r\nSalem\r\n', '75MB', 'Vodafone', 'http://182.19.61.157/graphs/iface/ether10%20-%20Wan/', '4_details.html'),
+(5, 'Pommidi', 'Srinivasa Engineering College\r\nPomidi', '10MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-006/rbwc-ilp-006.html', '5_details.html'),
+(7, 'Rasipuram', 'Muthayammal College of Engineering\r\nKakaveri,Rasipuram', '20MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-031/rbwc-ilp-031.html', '7_details.html'),
+(8, 'Attur', 'Green Tech College of Engineering\r\nNH-68 Narasingapuram Po. Attur Tk.Salem-636108', '12MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-034/rbwc-ilp-034.html', '8_details.html'),
+(9, 'Namakkal', '12D2,Karuppannan Street, SP Pudhur, Nammakal-637001.', '60MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-014/rbwc-ilp-014.html', '9_details.html'),
+(10, 'Gobichettipalayam', '15, Pariyur Road, Pudhupalayam, Gobichettipalayam-638476.', '100MB', 'Vodafone', 'http://182.19.61.153:1122/graphs/iface/ether1%20Rainbow%20Gobichettipalayam%20%20-%20100%20Mbps/', '10_details.html'),
+(11, 'Dindukal', 'PSNA College Of Engineering,\r\nDindugal', '100MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-030/rbwc-ilp-030.html', '11_details.html'),
+(13, 'Mohanur', '140C, Thottakara Street\r\nMohanur Tk,\r\n Namakkal Dt', '15MB', 'Vodafone', 'http://123.63.205.117:1947/graphs/iface/ether1/', '13_details.html'),
+(16, 'Gudiyatham', '3/2A G.H Road Pudpet,\r\nGudiyatham - 632602', '10MB', 'Vodafone', 'http://123.63.246.185:85/graphs/iface/Wan-ether2/', '16_details.html'),
+(19, 'Dharmapuri', 'VM Complex, Kandasamy Vathiyar St,\r\nNear LIC Office\r\nDharmapuri-636701', '20MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-001/rbwc-ilp-001.html', '19_details.html'),
+(17, 'Omalur', 'No:112-B, Kurunji Departmental Store Upstairs, Dharmapuri Main road,\r\nOmalur - 636 455', '10 MB', 'Vodafone', 'http://123.63.246.225/graphs/iface/ether2/', '17_details.html'),
+(18, 'Erode', '19-D, Arumugam Nanjammal compound,\r\nMuthuvelappa Street,\r\nErode - 638 001', '10 MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-004/rbwc-ilp-004.html', '18_details.html'),
+(21, 'Aliyar', 'The World Community Service Centre,\r\nTemple Of Consciousness\r\nArutperum Jothi Nagar\r\nAliyar - 642101', '12Mb', 'Airtel', 'http://182.74.116.58:1122/graphs/iface/ether1/', '21_details.'),
+(20, 'Kangeyam', 'Karur bye pass road,\r\nKangeyam', '10 MB', 'Airtel', 'http://usage3.mantraonline.com/ilp/rbwc-ilp-042/rbwc-ilp-042.html', '20_details.html');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE IF NOT EXISTS `login` (
+  `s_no` int(100) NOT NULL AUTO_INCREMENT,
+  `type` varchar(100) NOT NULL,
+  `user` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  PRIMARY KEY (`s_no`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`s_no`, `type`, `user`, `pass`) VALUES
+(1, 'user', 'rainbow', 'rcildot'),
+(2, 'admin', 'admin', 'admin');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
