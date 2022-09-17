@@ -209,3 +209,289 @@ INSERT INTO `login` (`s_no`, `type`, `user`, `pass`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+--
+-- Database: `rc1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking_entry`
+--
+
+CREATE TABLE IF NOT EXISTS `booking_entry` (
+  `book_main_id` int(11) NOT NULL AUTO_INCREMENT,
+  `booking_no` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `date_booking` date NOT NULL,
+  `customer_name` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `pincode` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `city` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `mobile_no` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `address` text CHARACTER SET utf8 NOT NULL,
+  `booking_date` datetime NOT NULL,
+  `bed_amt` varchar(100) NOT NULL,
+  `others` varchar(100) NOT NULL,
+  `adv_amt` varchar(100) NOT NULL,
+  `bal_amt` varchar(100) NOT NULL,
+  `status` int(11) NOT NULL,
+  `created_date` date NOT NULL,
+  `actual_amt` varchar(100) NOT NULL,
+  `hidden_amt` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `hidden_boxs` double(10,2) NOT NULL,
+  PRIMARY KEY (`book_main_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `booking_entry`
+--
+
+INSERT INTO `booking_entry` (`book_main_id`, `booking_no`, `date_booking`, `customer_name`, `pincode`, `city`, `mobile_no`, `address`, `booking_date`, `bed_amt`, `others`, `adv_amt`, `bal_amt`, `status`, `created_date`, `actual_amt`, `hidden_amt`, `hidden_boxs`) VALUES
+(1, 'BO-0001', '2015-05-28', 'Jeyaprakash.n', '628501', 'tuticorin', '9790403008', '23/a n no jeeva kovilpatti', '2015-05-28 18:21:00', '0.00', '0.00', '2000', '-700.00', 1, '2015-05-28', '1300.00', '', 0.00),
+(2, 'BO-0002', '2015-05-28', 'Babu', '627811', 'courtallam', '9952241321', 'kari kadai courtallam', '2015-05-28 23:54:00', '0.00', '0.00', '3000', '-500.00', 1, '2015-05-28', '2500.00', '', 0.00),
+(3, 'BO-0003', '2015-05-30', 'MR.DILPKUMAR', '638006', 'NAMAKKAL', '9952312359', '11MUNIAYAPAN NAGAR PALLIPALAYAM', '2015-05-30 07:02:00', '0.00', '0.00', '1500', '-700.00', 1, '2015-05-29', '800.00', '', 0.00),
+(5, 'BO-0004', '2015-06-03', 'MR.Ramanathan', '600005', 'chennai', '9790774878', '25/13(4b) singarachari st tiruvallikkenni', '2015-06-03 09:15:00', '', '0.00', '1000', 'NaN', 1, '2015-06-02', 'NaN', '', 0.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking_subentry`
+--
+
+CREATE TABLE IF NOT EXISTS `booking_subentry` (
+  `book_sub_id` int(11) NOT NULL AUTO_INCREMENT,
+  `room_no` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `room_rent` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `no_days` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `no_persons` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `amount` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `created` date NOT NULL,
+  `booking_no` varchar(100) NOT NULL,
+  `renewal` int(11) NOT NULL,
+  `room_status` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`book_sub_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `booking_subentry`
+--
+
+INSERT INTO `booking_subentry` (`book_sub_id`, `room_no`, `room_rent`, `no_days`, `no_persons`, `amount`, `created`, `booking_no`, `renewal`, `room_status`, `status`) VALUES
+(1, '20', '1300', '1', '7', '1300', '2015-05-28', 'BO-0001', 0, 1, 1),
+(11, '5', '500', '1', '3', '500', '2015-05-28', 'BO-0002', 0, 1, 1),
+(9, '3', '500', '1', '3', '500', '2015-05-28', 'BO-0002', 0, 1, 1),
+(10, '4', '500', '1', '4', '500', '2015-05-28', 'BO-0002', 0, 1, 1),
+(7, '2', '500', '1', '3', '500', '2015-05-28', 'BO-0002', 0, 1, 1),
+(12, '16', '500', '1', '3', '500', '2015-05-28', 'BO-0002', 0, 1, 1),
+(13, '3', '800', '1', '4', '800', '2015-05-29', 'BO-0003', 0, 1, 1),
+(15, '4', '600', '2', '1', '1200', '2015-06-02', 'BO-0004', 0, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `checkout_entry`
+--
+
+CREATE TABLE IF NOT EXISTS `checkout_entry` (
+  `check_id` int(11) NOT NULL AUTO_INCREMENT,
+  `booking_no` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `booking_date` date NOT NULL,
+  `from_date` datetime NOT NULL,
+  `to_date` datetime NOT NULL,
+  `cust_details` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `adv_amt` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `address` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `act_amt` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `rec_amt` double(10,2) NOT NULL,
+  `pay_amt` double(10,2) NOT NULL,
+  `renewal_amt` double(10,2) NOT NULL,
+  `city` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `bal_amt` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `status` int(11) NOT NULL,
+  `room_no` varchar(100) NOT NULL,
+  `created_date` datetime NOT NULL,
+  PRIMARY KEY (`check_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table `checkout_entry`
+--
+
+INSERT INTO `checkout_entry` (`check_id`, `booking_no`, `booking_date`, `from_date`, `to_date`, `cust_details`, `adv_amt`, `address`, `act_amt`, `rec_amt`, `pay_amt`, `renewal_amt`, `city`, `bal_amt`, `status`, `room_no`, `created_date`) VALUES
+(1, 'BO-0001', '2015-05-28', '2015-05-28 00:00:00', '2015-05-29 00:00:00', 'Jeyaprakash.n', '2000.00 ', '23/a n no jeeva kovilpatti', '1300.00', 0.00, 700.00, 0.00, 'tuticorin', '0.00', 1, '206 ', '2015-05-28 18:21:00'),
+(2, 'BO-0002', '2015-05-28', '2015-05-28 00:00:00', '2015-05-29 00:00:00', 'Babu', '3000.00 ', 'kari kadai courtallam', '2500.00', 0.00, 500.00, 0.00, 'courtallam', '0.00', 1, '105 ,103 ,104 ,102 ,106 ', '2015-05-29 23:54:00'),
+(3, 'BO-0003', '2015-05-30', '2015-05-30 00:00:00', '2015-05-31 00:00:00', 'MR.DILPKUMAR', '1500.00 ', '11MUNIAYAPAN NAGAR PALLIPALAYAM', '800.00', 0.00, 700.00, 0.00, 'NAMAKKAL', '0.00', 1, '103 ', '2015-05-30 18:56:45'),
+(12, 'BO-0004', '2015-06-03', '2015-06-03 00:00:00', '2015-06-05 00:00:00', 'MR.Ramanathan', '1000.00 ', '25/13(4b) singarachari st tiruvallikkenni', '1200.00', 200.00, 0.00, 0.00, 'chennai', '0.00', 1, '104 ', '2015-06-04 21:14:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `expenses`
+--
+
+CREATE TABLE IF NOT EXISTS `expenses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `booking_expense` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `description` text CHARACTER SET utf8 NOT NULL,
+  `expense_amt` double(10,2) NOT NULL,
+  `exp_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `expenses`
+--
+
+INSERT INTO `expenses` (`id`, `booking_expense`, `description`, `expense_amt`, `exp_date`) VALUES
+(1, 'EXP-0001', 'commission room206', 130.00, '2015-05-28'),
+(2, 'EXP-0002', 'COMMISION ROOM 103', 80.00, '2015-05-29'),
+(4, 'EXP-0003', 'Senbaga Devi Kovil pooja ku', 500.00, '2015-06-05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extrabed`
+--
+
+CREATE TABLE IF NOT EXISTS `extrabed` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `no_day` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `booking_no` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `extra_bed` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `extra_amt` double(10,2) NOT NULL,
+  `tot_bed_amt` double(10,2) NOT NULL,
+  `renewal` int(11) NOT NULL,
+  `create_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room_no`
+--
+
+CREATE TABLE IF NOT EXISTS `room_no` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `room_no` int(11) NOT NULL,
+  `room_status` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+
+--
+-- Dumping data for table `room_no`
+--
+
+INSERT INTO `room_no` (`id`, `room_no`, `room_status`) VALUES
+(2, 102, 0),
+(3, 103, 0),
+(4, 104, 0),
+(5, 105, 0),
+(6, 201, 0),
+(7, 202, 0),
+(8, 203, 0),
+(9, 204, 0),
+(10, 205, 0),
+(11, 301, 0),
+(12, 302, 0),
+(13, 303, 0),
+(14, 304, 0),
+(15, 305, 0),
+(16, 106, 0),
+(17, 107, 0),
+(20, 206, 0),
+(22, 306, 0),
+(23, 307, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transcation_table`
+--
+
+CREATE TABLE IF NOT EXISTS `transcation_table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `booking_expense` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `description` text CHARACTER SET utf8 NOT NULL,
+  `dr` double(10,2) NOT NULL,
+  `cr` double(10,2) NOT NULL,
+  `amt` double(10,2) NOT NULL,
+  `create_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+
+--
+-- Dumping data for table `transcation_table`
+--
+
+INSERT INTO `transcation_table` (`id`, `date`, `booking_expense`, `description`, `dr`, `cr`, `amt`, `create_date`) VALUES
+(1, '2015-05-28', 'BO-0001', 'Booking', 0.00, 2000.00, 0.00, '2015-05-28'),
+(2, '2015-05-28', 'EXP-0001', 'Expenses', 130.00, 0.00, 0.00, '2015-05-28'),
+(3, '2015-05-28', 'BO-0002', 'Booking', 0.00, 3000.00, 0.00, '2015-05-28'),
+(4, '2015-05-28', 'BO-0001', 'Checkout', 700.00, 0.00, 0.00, '2015-05-28'),
+(5, '2015-05-29', 'BO-0002', 'Checkout', 500.00, 0.00, 0.00, '2015-05-29'),
+(6, '2015-05-30', 'BO-0003', 'Booking', 0.00, 1500.00, 0.00, '2015-05-29'),
+(7, '2015-05-30', 'EXP-0002', 'Expenses', 80.00, 0.00, 0.00, '2015-05-30'),
+(9, '2015-05-30', 'BO-0003', 'Checkout', 700.00, 0.00, 0.00, '2015-05-30'),
+(20, '2015-06-04', 'BO-0004', 'Checkout', 0.00, 200.00, 0.00, '2015-06-04'),
+(19, '2015-06-03', 'BO-0004', 'Booking', 0.00, 1000.00, 0.00, '2015-06-02'),
+(21, '2015-06-05', 'EXP-0003', 'Expenses', 500.00, 0.00, 0.00, '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_creation`
+--
+
+CREATE TABLE IF NOT EXISTS `user_creation` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_id` int(11) NOT NULL,
+  `user_type` varchar(100) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `confirm_password` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `create_date` date NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `user_creation`
+--
+
+INSERT INTO `user_creation` (`user_id`, `staff_id`, `user_type`, `user_name`, `password`, `confirm_password`, `status`, `create_date`) VALUES
+(1, 1, 'Admin', 'admin', '12345', '12345', 'Yes', '2015-04-08'),
+(2, 2, 'Admin', 'user', '60609', '60609', 'Yes', '2015-04-05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_rights`
+--
+
+CREATE TABLE IF NOT EXISTS `user_rights` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `user_screen` varchar(100) NOT NULL,
+  `user_form_name` varchar(100) NOT NULL,
+  `access_form` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table `user_rights`
+--
+
+INSERT INTO `user_rights` (`id`, `user_id`, `user_screen`, `user_form_name`, `access_form`) VALUES
+(1, 1, 'Admin', 'user_creation', 'user_creation,user_rights'),
+(2, 1, 'Admin', 'user_rights', 'user_creation,user_rights'),
+(3, 1, 'Booking Entry', 'booking_creation', 'booking_creation'),
+(10, 2, 'Report', 'day_report', 'day_report'),
+(12, 1, 'Check Out', 'checkout_creation', 'checkout_creation');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
